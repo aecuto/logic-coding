@@ -1,8 +1,8 @@
-const prompt = require("prompt");
+import { start, get } from "prompt";
 
-prompt.start();
+start();
 
-const logStar1 = (n) => {
+const logStar1 = (n: number) => {
   let size = n;
   for (let index = 1; index <= n; index++) {
     for (let j = 1; j <= index; j++) {
@@ -17,7 +17,7 @@ const logStar1 = (n) => {
   }
 };
 
-const logStar2 = (n) => {
+const logStar2 = (n: number) => {
   let size = n;
   for (let i = 1; i <= n; i++) {
     for (let j = 1; j <= i; j++) {
@@ -36,7 +36,7 @@ const logStar2 = (n) => {
   }
 };
 
-prompt.get(["n"], function (err, result) {
+get(["n"], function (err, result) {
   console.log("Command-line input received:");
   console.log("n: " + result.n);
 

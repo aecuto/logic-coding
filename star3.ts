@@ -1,8 +1,8 @@
-const prompt = require("prompt");
+import { start, get } from "prompt";
 
-prompt.start();
+start();
 
-const firstIndex = (size) => {
+const firstIndex = (size: number) => {
   for (let index = 0; index < size; index++) {
     process.stdout.write("*");
   }
@@ -16,7 +16,7 @@ const indexEqualN = (size) => {
   process.stdout.write("\n");
 };
 
-const eventIndex = (index, size) => {
+const eventIndex = (index: number, size: number) => {
   const star = index / 2;
   let countEmpty = 0;
 
@@ -36,7 +36,7 @@ const eventIndex = (index, size) => {
   process.stdout.write("\n");
 };
 
-const oddIndex = (index, size) => {
+const oddIndex = (index: number, size: number) => {
   const center = Math.round(index / 2);
   let used = 0;
   for (let k = 1; k <= index; k++) {
@@ -55,7 +55,7 @@ const oddIndex = (index, size) => {
   process.stdout.write("\n");
 };
 
-prompt.get(["n"], function (err, result) {
+get(["n"], function (err, result) {
   console.log("Command-line input received:");
   console.log("n: " + result.n);
 

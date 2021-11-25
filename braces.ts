@@ -1,10 +1,10 @@
-const prompt = require("prompt");
+import { start, get } from "prompt";
 
-prompt.start();
+start();
 
 const braces = ["(", ")", "{", "}", "[", "]"];
 
-const checkBraces = (str) => {
+const checkBraces = (str: string) => {
   let firstBraces = [];
   for (let i = 0; i < str.length; i++) {
     const currStr = str[i];
@@ -16,7 +16,7 @@ const checkBraces = (str) => {
   }
 };
 
-const validateBraces = (firstBraces, str) => {
+const validateBraces = (firstBraces: string[], str: string) => {
   if (!firstBraces.length) {
     return {
       status: false,
@@ -48,11 +48,11 @@ const validateBraces = (firstBraces, str) => {
   };
 };
 
-prompt.get(["str"], function (err, result) {
+get(["str"], function (err, result) {
   console.log("Command-line input received:");
   console.log("str: " + result.str);
 
-  let str = result.str;
+  let str = String(result.str);
 
   let status = true;
   do {

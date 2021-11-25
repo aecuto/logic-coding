@@ -1,15 +1,15 @@
-const prompt = require("prompt");
+import { start, get } from "prompt";
 
-prompt.start();
+start();
 
-const printContent = (n, index) => {
+const printContent = (n: number, index: number) => {
   process.stdout.write("* ");
   for (let k = 0; k < n - index - 1; k++) {
     process.stdout.write(". ");
   }
 };
 
-const firstHalfPrint = (n) => {
+const firstHalfPrint = (n: number) => {
   for (let index = 0; index <= n - 1; index++) {
     for (let k = 0; k < index; k++) {
       process.stdout.write(". ");
@@ -26,7 +26,7 @@ const firstHalfPrint = (n) => {
   }
 };
 
-const lastHalfPrint = (n) => {
+const lastHalfPrint = (n: number) => {
   for (let index = n - 1; index >= 0; index--) {
     for (let k = 0; k < index; k++) {
       process.stdout.write(". ");
@@ -43,7 +43,7 @@ const lastHalfPrint = (n) => {
   }
 };
 
-prompt.get(["n"], function (err, result) {
+get(["n"], function (err, result) {
   console.log("Command-line input received:");
   console.log("n: " + result.n);
 
